@@ -11,7 +11,7 @@ Sets up Express JSON middleware.
 
 Registers API routes from routes/photoRoutes.js.
 
-Database Connection
+#Database Connection
 
 config/db.js uses mongoose.connect() to connect to MongoDB Atlas using the MONGO_URI from .env.
 
@@ -23,7 +23,7 @@ The request hits the route defined in routes/photoRoutes.js.
 
 That route calls the createPhoto function from controllers/photoController.js.
 
-Controller Handles Logic
+#Controller Handles Logic
 
 createPhoto extracts title, genre, price, availableCopies, and details from the request body.
 
@@ -31,13 +31,13 @@ It uses the Mongoose model Photo (defined in models/photo.js) to create and save
 
 Validation rules in the schema are applied automatically.
 
-Schema & Validation
+#Schema & Validation
 
 models/photo.js defines a schema with required fields and validation rules appropriate for photography data.
 
 If any validation fails, Mongoose throws an error, which is returned to the client as a 400 status with the error message.
 
-Response Sent Back
+#Response Sent Back
 
 If successful, the server responds with a 201 Created status and the saved document.
 
